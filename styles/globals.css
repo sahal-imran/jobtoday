@@ -1,3 +1,59 @@
+@font-face {
+  font-family: "GraphikThin";
+  src: url("../fonts/Graphik-Font-Family/GraphikThin.otf") format("opentype");
+}
+@font-face {
+  font-family: "GraphikThinItalic";
+  src: url("../fonts/Graphik-Font-Family/GraphikThinItalic.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "GraphikRegular";
+  src: url("../fonts/Graphik-Font-Family/GraphikRegular.otf") format("opentype");
+}
+@font-face {
+  font-family: "GraphikRegularItalic";
+  src: url("../fonts/Graphik-Font-Family/GraphikRegularItalic.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "GraphikMedium";
+  src: url("../fonts/Graphik-Font-Family/GraphikMedium.otf") format("opentype");
+}
+@font-face {
+  font-family: "GraphikMediumItalic";
+  src: url("../fonts/Graphik-Font-Family/GraphikMediumItalic.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "GraphikBold";
+  src: url("../fonts/Graphik-Font-Family/GraphikBold.otf") format("opentype");
+}
+@font-face {
+  font-family: "GraphikBoldItalic";
+  src: url("../fonts/Graphik-Font-Family/GraphikBoldItalic.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "GraphikSemibold";
+  src: url("../fonts/Graphik-Font-Family/GraphikSemibold.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "GraphikSemiboldItalic";
+  src: url("../fonts/Graphik-Font-Family/GraphikSemiboldItalic.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "GraphikBlack";
+  src: url("../fonts/Graphik-Font-Family/GraphikBlack.otf") format("opentype");
+}
+@font-face {
+  font-family: "GraphikBlackItalic";
+  src: url("../fonts/Graphik-Font-Family/GraphikBlackItalic.otf")
+    format("opentype");
+}
+
 html,
 body {
   padding: 0;
@@ -6,11 +62,14 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
   box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+.SearchFormInputs::placeholder {
+  color: "#4f4f5c";
+  font-size: 18px;
+  font-family: "GraphikRegular";
 }
