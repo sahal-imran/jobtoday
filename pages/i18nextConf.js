@@ -7,7 +7,7 @@ import translationAR from "../public/assets/locales/ar/translation.json";
 import translationFR from "../public/assets/locales/fr/translation.json";
 
 
-i18next
+export const i18 = i18next
   .use(HttpApi)
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -26,4 +26,3 @@ i18next
     },
   });
 
-export default i18next;
