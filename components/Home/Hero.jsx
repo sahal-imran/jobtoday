@@ -82,10 +82,12 @@ function Home() {
           </Box>
         </Box>
         {/* Business? */}
-        <AnchorLink href='' sx={{ display: {
-          md: 'flex',
-          xs: 'none'
-        }, justifyContent: 'center', alignItems: 'center', position: 'absolute', bottom: '12px', left: '50%', transform: 'translate(-50%, -50%)', left: '50%', backgroundColor: 'rgba(255,255,255,.7)', p: 1.5, whiteSpace: 'nowrap', fontSize: '18px', fontFamily: 'GraphikSemibold', borderRadius: '8px', textDecoration: 'none' }} >
+        <AnchorLink href='' sx={{
+          display: {
+            md: 'flex',
+            xs: 'none'
+          }, justifyContent: 'center', alignItems: 'center', position: 'absolute', bottom: '12px', left: '50%', transform: 'translate(-50%, -50%)', left: '50%', backgroundColor: 'rgba(255,255,255,.7)', p: 1.5, whiteSpace: 'nowrap', fontSize: '18px', fontFamily: 'GraphikSemibold', borderRadius: '8px', textDecoration: 'none'
+        }} >
           <Box component={'span'} sx={{ color: '#000', cursor: "auto", mr: 1 }} >Are you a business?</Box>
           Post a job and hire
         </AnchorLink>
@@ -101,7 +103,7 @@ function Home() {
         }, justifyContent: 'center', alignItems: 'center', flexDirection: 'column', position: 'relative', p: 2, mt: -10
       }} >
         <Typography variant='h2' sx={{ fontSize: '32px', fontFamily: 'GraphikBold', color: 'white', mb: 6, textShadow: '0px 2px 3px rgb(0 0 0 / 40%), 0px 4px 7px rgb(0 0 0 / 10%), 0px 9px 12px rgb(0 0 0 / 10%)', alignSelf: 'start', }} >
-          Find a job. Today.
+          {t('Job')}
         </Typography>
         <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }} >
           <Box sx={{ width: '100%', height: '60px', }} >
@@ -119,7 +121,7 @@ function Home() {
               Find jobs
             </Button>
           </Box>
-          <AnchorLink href='' sx={{ fontSize: '18px', fontFamily: 'GraphikSemibold', textDecoration: 'none', color: '#0e54ff', textAlign: 'center',mt:2 }} >
+          <AnchorLink href='' sx={{ fontSize: '18px', fontFamily: 'GraphikSemibold', textDecoration: 'none', color: '#0e54ff', textAlign: 'center', mt: 2 }} >
             Post a job and hire
           </AnchorLink>
         </Box>
