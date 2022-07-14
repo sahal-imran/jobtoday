@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import i18next from 'i18next'
+import cookies from 'js-cookie'
 import { Box } from '@mui/system';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -6,8 +9,39 @@ import Button from '@mui/material/Button';
 import AnchorLink from "@mui/material/Link";
 import { useState } from 'react';
 import Grid from '@mui/material/Grid';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import LanguageIcon from '@mui/icons-material/Language';
+
+const languages = [
+  {
+    code: 'fr',
+    name: 'Français',
+    country_code: 'fr',
+  },
+  {
+    code: 'en',
+    name: 'English',
+    country_code: 'gb',
+  },
+]
+
 
 function Footer() {
+
+  const currentLanguageCode = cookies.get('i18next') || 'en'
+  const currentLanguage = languages.find((l) => l.code === currentLanguageCode)
+  const { t } = useTranslation();
+
+
+  useEffect(() => {
+    document.body.dir = currentLanguage.dir || 'ltr'
+    // document.title = t('app_title')
+  }, [currentLanguage, t,])
+
+
   return (
     <>
       <Box sx={{ width: '100%', py: 4, display: "flex", justifyContent: 'center', alignItems: 'center', backgroundColor: '#fbfbfb' }} >
@@ -97,6 +131,22 @@ function Footer() {
                     xs: 3
                   }
                 }} >
+                  <FormControl sx={{ minWidth: 150, mb: 3 }} size="small">
+                    <InputLabel id="demo-select-small" sx={{ display: "flex", justifyContent: 'center', alignItems: 'center', }} ><LanguageIcon sx={{ mr: "4px" }} /> Language</InputLabel>
+                    <Select
+                      labelId="demo-select-small"
+                      id="demo-select-small"
+                      value={currentLanguageCode}
+                      label="------Language"
+                      onChange={(event) => i18next.changeLanguage(event.target.value)}
+                    >
+                      {
+                        languages.map(({ code, name, country_code }) => {
+                          return <MenuItem key={country_code} value={code}>{name}</MenuItem>
+                        })
+                      }
+                    </Select>
+                  </FormControl>
                   <Typography variant='h2' sx={{ fontSize: '20px', lineHeight: '28px', fontFamily: 'GraphikSemiBold', color: '#93939a', mb: 1 }} >
                     Follow us
                   </Typography>
@@ -134,14 +184,14 @@ function Footer() {
               md: 'start',
               xs: 'center'
             }, alignItems: {
-              md:'center',
-              xs:'start'
+              md: 'center',
+              xs: 'start'
             }, flexDirection: {
               md: 'row',
               xs: 'column'
-            }, mt:{
-              md:2,
-              xs:2
+            }, mt: {
+              md: 2,
+              xs: 2
             }
           }} >
             <Box sx={{ display: "flex", justifyContent: 'center', alignItems: 'center', }} >
