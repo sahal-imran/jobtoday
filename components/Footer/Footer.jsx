@@ -14,13 +14,14 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import LanguageIcon from '@mui/icons-material/Language';
+import Image from 'next/image';
 
 const languages = [
-  {
-    code: 'fr',
-    name: 'Français',
-    country_code: 'fr',
-  },
+  // {
+  //   code: 'fr',
+  //   name: 'Français',
+  //   country_code: 'fr',
+  // },
   {
     code: 'en',
     name: 'English',
@@ -152,16 +153,16 @@ function Footer() {
                   </Typography>
                   <Box sx={{ display: "flex", justifyContent: 'center', alignItems: 'center', }} >
                     <AnchorLink href='' sx={{ mr: 2 }} >
-                      <img src="/pictures/home/fb-footer.svg" style={{ width: '40px', height: '40px', objectFit: 'contain' }} alt="icon" />
+                      <Image src={'/pictures/home/fb-footer.svg'} width={40} height={40} objectFit={'contain'} alt={'icon'} />
                     </AnchorLink>
                     <AnchorLink href='' sx={{ mr: 2 }} >
-                      <img src="/pictures/home/twitter-footer.svg" style={{ width: '40px', height: '40px', objectFit: 'contain' }} alt="icon" />
+                      <Image src={'/pictures/home/twitter-footer.svg'} width={40} height={40} objectFit={'contain'} alt={'icon'} />
                     </AnchorLink>
                     <AnchorLink href='' sx={{ mr: 2 }} >
-                      <img src="/pictures/home/instagram-footer.svg" style={{ width: '40px', height: '40px', objectFit: 'contain' }} alt="icon" />
+                      <Image src={'/pictures/home/instagram-footer.svg'} width={40} height={40} objectFit={'contain'} alt={'icon'} />
                     </AnchorLink>
                     <AnchorLink href='' >
-                      <img src="/pictures/home/linkedin-footer.svg" style={{ width: '40px', height: '40px', objectFit: 'contain' }} alt="icon" />
+                      <Image src={'/pictures/home/linkedin-footer.svg'} width={40} height={40} objectFit={'contain'} alt={'icon'} />
                     </AnchorLink>
                   </Box>
                   <Typography variant='h2' sx={{ fontSize: '20px', lineHeight: '28px', fontFamily: 'GraphikSemiBold', color: '#93939a', mb: 1, mt: 3 }} >
@@ -169,10 +170,10 @@ function Footer() {
                   </Typography>
                   <Box sx={{ display: "flex", justifyContent: 'center', alignItems: 'center' }} >
                     <AnchorLink href='' sx={{ mr: 2 }} >
-                      <img src="/pictures/home/app-store-badge-en.svg" style={{ width: '128px', height: 'px', objectFit: 'contain' }} alt="icon" />
+                      <Image src={'/pictures/home/app-store-badge-en.svg'} width={128} height={56} objectFit={'contain'} alt={'icon'} />
                     </AnchorLink>
                     <AnchorLink href='' >
-                      <img src="/pictures/home/google-play-badge-en.png" style={{ width: '142px', height: '56px', objectFit: 'contain' }} alt="icon" />
+                      <Image src={'/pictures/home/google-play-badge-en.png'} width={142} height={56} objectFit={'contain'} alt={'icon'} />
                     </AnchorLink>
                   </Box>
                 </Box>
@@ -195,7 +196,9 @@ function Footer() {
             }
           }} >
             <Box sx={{ display: "flex", justifyContent: 'center', alignItems: 'center', }} >
-              <img style={{ width: '18px', height: '18px', objectFit: 'contain', marginBottom: '2px' }} src="/pictures/home/logo.svg" alt="logo" />
+              <Box sx={{mr:'4px',display: "flex", justifyContent: 'center', alignItems: 'center'}} >
+              <Image src={'/pictures/home/logo.svg'} width={18} height={18} objectFit={'cover'} alt={'logo'} />
+              </Box>
               <Typography variant='h2' sx={{ fontSize: '15px', fontFamily: 'GraphikRegular', color: '#29293d', ml: 1 }} >
                 © 2022 NextJb S.A. All Rights Reserved
               </Typography>

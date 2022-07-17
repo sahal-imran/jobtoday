@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import AnchorLink from "@mui/material/Link";
 import { useState } from 'react';
+import Image from 'next/image';
 
 function JobByCategory() {
 
@@ -33,7 +34,9 @@ function JobByCategory() {
                                         border: '1px solid #0e54ff', backgroundColor: '#f1f5ff'
                                     }, display: "flex", justifyContent: 'center', alignItems: 'center', mr: 1, mt: 2
                                 }} >
-                                    <img src={category.imgURL} style={{ width: '20px', height: '20px', objectFit: 'contain', marginRight: '8px', marginBottom: '2px' }} alt="icon" />
+                                    <Box sx={{ mr: 1, display: "flex", justifyContent: 'center', alignItems: 'center', }} >
+                                        <Image src={category.imgURL} width={20} height={20} objectFit={'contain'} />
+                                    </Box>
                                     {category.Name}
                                 </AnchorLink>
                             })

@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import AnchorLink from "@mui/material/Link";
 import { useTranslation } from "react-i18next";
+import Image from 'next/image';
 
 
 function Home() {
@@ -23,8 +24,8 @@ function Home() {
         </Box>
         {/* Top bar */}
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', p: 2, position: 'absolute', top: '0px' }} >
-          <AnchorLink href='' sx={{ width: '56px', height: '56px', display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
-            <img style={{ width: '100%', height: '100%', objectFit: 'cover' }} src="/pictures/home/logo.svg" alt="bg" />
+          <AnchorLink href='' sx={{display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+            <Image src={'/pictures/home/logo.svg'} width={56} height={56} objectFit={'cover'} alt={'logo'} />
           </AnchorLink>
           <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
             <Button variant='contained' sx={{
@@ -60,8 +61,8 @@ function Home() {
           }, justifyContent: 'center', alignItems: 'center', flexDirection: 'column', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
         }} >
           <Typography variant='h2' sx={{ fontSize: '48px', fontFamily: 'GraphikBold', color: 'white', mb: 4, textShadow: '0px 2px 3px rgb(0 0 0 / 40%), 0px 4px 7px rgb(0 0 0 / 10%), 0px 9px 12px rgb(0 0 0 / 10%)', alignSelf: 'start', ml: 2 }} >
-            {/* Find a job. Today. */}
-            {t('Job')}
+            Find a job. Today.
+            {/* {t('Job')} */}
           </Typography>
           <Box sx={{ width: '100%', borderRadius: '12px', boxShadow: '0 2px 20px rgb(0 0 0 / 30%), 0 2px 10px rgb(0 0 0 / 22%)', backgroundColor: 'white', p: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
             <Box sx={{ width: '40%', height: '60px', mr: 1 }} >
@@ -103,7 +104,8 @@ function Home() {
         }, justifyContent: 'center', alignItems: 'center', flexDirection: 'column', position: 'relative', p: 2, mt: -10
       }} >
         <Typography variant='h2' sx={{ fontSize: '32px', fontFamily: 'GraphikBold', color: 'white', mb: 6, textShadow: '0px 2px 3px rgb(0 0 0 / 40%), 0px 4px 7px rgb(0 0 0 / 10%), 0px 9px 12px rgb(0 0 0 / 10%)', alignSelf: 'start', }} >
-          {t('Job')}
+          {/* {t('Job')} */}
+          Find a job. Today.
         </Typography>
         <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }} >
           <Box sx={{ width: '100%', height: '60px', }} >

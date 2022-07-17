@@ -1,9 +1,9 @@
-import HomeRefirect from "../Redirects/HomeRefirect"
+import Home from "../../views/Home";
 
 function index() {
   return (
     <>
-    <HomeRefirect />
+    <Home />
     </>
   )
 }

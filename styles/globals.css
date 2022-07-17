@@ -73,3 +73,8 @@ a {
   font-size: 18px;
   font-family: "GraphikRegular";
 }
+.NavFormInputs::placeholder {
+  color: "#eaeaea";
+  font-size: 18px;
+  font-family: "GraphikRegular";
+}
