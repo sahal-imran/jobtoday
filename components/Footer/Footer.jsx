@@ -15,6 +15,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import LanguageIcon from '@mui/icons-material/Language';
 import Image from 'next/image';
+import { useRouter } from "next/router";
 
 const languages = [
   // {
@@ -31,6 +32,7 @@ const languages = [
 
 
 function Footer() {
+  const router = useRouter();
 
   const currentLanguageCode = cookies.get('i18next') || 'en'
   const currentLanguage = languages.find((l) => l.code === currentLanguageCode)
@@ -45,7 +47,7 @@ function Footer() {
 
   return (
     <>
-      <Box sx={{ width: '100%', py: 4, display: "flex", justifyContent: 'center', alignItems: 'center', backgroundColor: '#fbfbfb' }} >
+      <Box sx={router.pathname === '/country' || router.pathname === '/' ? { display: 'none' } : { width: '100%', py: 4, display: "flex", justifyContent: 'center', alignItems: 'center', backgroundColor: '#fbfbfb' }} >
         <Container maxWidth='lg' sx={{ display: "flex", justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }} >
           <Box sx={{ flexGrow: 1, width: '100%', mt: 6 }}>
             <Grid container rowSpacing={0} columnSpacing={2}>

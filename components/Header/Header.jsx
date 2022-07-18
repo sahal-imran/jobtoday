@@ -6,18 +6,20 @@ import AnchorLink from "@mui/material/Link";
 import { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from "next/router";
+import Grid from '@mui/material/Grid';
 
 function Header() {
     const router = useRouter();
+    const [Show_SearchBox_For_Mobile_View, Set_Show_SearchBox_For_Mobile_View] = useState(false);
     return (
         <>
-            <Box sx={router.pathname === '/country' ? { display: 'none' } : {
+            <Box sx={router.pathname === '/country' || router.pathname === '/' ? { display: 'none' } : {
                 width: '100%', minHeight: "80px", py: {
                     md: 'unset',
                     xs: 2
                 }, display: "flex", justifyContent: 'center', alignItems: 'center', flexDirection: 'column', background: '#2252c7'
             }} >
-                <Container maxWidth='lgBig' sx={{
+                <Container maxWidth='lgBig' sx={Show_SearchBox_For_Mobile_View ? { display: 'none' } : {
                     height: '100%', display: "flex", justifyContent: {
                         md: 'center',
                         xs: 'space-between'
@@ -88,13 +90,15 @@ function Header() {
                         </AnchorLink>
                     </Box>
                 </Container>
-                <Container maxWidth='lgBig' sx={{
+
+                {/* Button Box for show the search bar box in mobile view */}
+                <Container maxWidth='lgBig' sx={Show_SearchBox_For_Mobile_View ? { display: 'none' } : {
                     display: {
                         md: 'none',
                         xs: "flex"
                     }, justifyContent: 'center', alignItems: 'center', mt: 2
                 }} >
-                    <Box sx={{ overflow: 'hidden', borderRadius: '8px', width: '100%', height: '50px', display: "flex", justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', }} >
+                    <Box onClick={() => Set_Show_SearchBox_For_Mobile_View(!Show_SearchBox_For_Mobile_View)} sx={{ overflow: 'hidden', borderRadius: '8px', width: '100%', height: '45px', display: "flex", justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', }} >
                         <Box sx={{ width: '50px', height: '100%', display: "flex", justifyContent: 'center', alignItems: 'center', }} >
                             <Button variant='contain' sx={{
                                 backgroundColor: 'white', border: 'none', borderRadius: 'unset', boxShadow: 'none', textTransform: 'capitalize', width: '100%', height: '100%', "&:hover": {
@@ -105,8 +109,41 @@ function Header() {
                             </Button>
                         </Box>
                         <Box sx={{ width: 'calc(100% - 50px)', height: '100%', display: "flex", justifyContent: 'center', alignItems: 'center' }} >
-                            <input autoComplete='off' type="text" style={{ width: '100%', height: '100%', outline: 'none', border: 'none', fontFamily: 'GraphikRegular', fontSize: '16px', color: '#2252c7',pointerEvents:'none' }} placeholder='All jobs in' />
+                            <input autoComplete='off' type="text" style={{ width: '100%', height: '100%', outline: 'none', border: 'none', fontFamily: 'GraphikRegular', fontSize: '16px', color: '#2252c7', pointerEvents: 'none' }} placeholder='All jobs in' />
                         </Box>
+                    </Box>
+                </Container>
+
+                {/* Toggle search bar box for mobile view */}
+                <Container maxWidth='lgBig' sx={Show_SearchBox_For_Mobile_View ? {
+                    display: {
+                        md: 'none',
+                        xs: "flex"
+                    }, justifyContent: 'center', alignItems: 'center'
+                } : { display: 'none' }} >
+                    <Box sx={{ flexGrow: 1, width: '100%' }}>
+                        <Grid container spacing={0}>
+                            <Grid item xs={1}>
+                                <Box onClick={() => Set_Show_SearchBox_For_Mobile_View(!Show_SearchBox_For_Mobile_View)} sx={{ width: '100%', height: '100%', display: "flex", justifyContent: 'start', alignItems: 'start',mt:1 }}>
+                                    <Image src={'/pictures/Morecities/cross-white.svg'} width={24} height={24} objectFit={'contain'} />
+                                </Box>
+                            </Grid>
+                            <Grid item xs={10}>
+                                <Box sx={{ display: "flex", justifyContent: 'center', alignItems: 'center', flexDirection: 'column', width: '100%' }} >
+                                    <Box sx={{ width: '100%', height: '42px', display: "flex", justifyContent: 'center', alignItems: 'center', borderRadius: '8px', overflow: 'hidden', }} >
+                                        <input autoComplete='off' type="text" style={{ width: '100%', height: '100%', outline: 'none', border: 'none', fontFamily: 'GraphikRegular', fontSize: '16px', color: '#2252c7', padding: '0px 16px' }} placeholder='Search jobs' />
+                                    </Box>
+                                    <Box sx={{ width: '100%', height: '42px', display: "flex", justifyContent: 'center', alignItems: 'center', borderRadius: '8px', overflow: 'hidden', mt:1 }} >
+                                        <input autoComplete='off' type="text" style={{ width: '100%', height: '100%', outline: 'none', border: 'none', fontFamily: 'GraphikRegular', fontSize: '16px', color: '#2252c7', padding: '0px 16px' }} placeholder='Which city?' />
+                                    </Box>
+                                </Box>
+                            </Grid>
+                            <Grid item xs={1}>
+                                <Box sx={{ width: '100%', height: '100%', display: "flex", justifyContent: 'end', alignItems: 'start',mt:1 }}>
+                                    <Image src={'/pictures/Morecities/search-white.svg'} width={28} height={28} objectFit={'contain'} />
+                                </Box>
+                            </Grid>
+                        </Grid>
                     </Box>
                 </Container>
             </Box>

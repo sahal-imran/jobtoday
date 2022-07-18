@@ -12,4 +12,4 @@ function HomeRefirect() {
     )
 }
 
-export default HomeRefirect
+export default HomeRefirect;
