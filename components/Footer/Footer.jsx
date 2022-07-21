@@ -47,7 +47,7 @@ function Footer() {
 
   return (
     <>
-      <Box sx={router.pathname === '/country' || router.pathname === '/' ? { display: 'none' } : { width: '100%', py: 4, display: "flex", justifyContent: 'center', alignItems: 'center', backgroundColor: '#fbfbfb' }} >
+      <Box sx={router.pathname === '/' ? { display: 'none' } : { width: '100%', py: 4, display: "flex", justifyContent: 'center', alignItems: 'center', backgroundColor: '#fbfbfb' }} >
         <Container maxWidth='lg' sx={{ display: "flex", justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }} >
           <Box sx={{ flexGrow: 1, width: '100%', mt: 6 }}>
             <Grid container rowSpacing={0} columnSpacing={2}>
