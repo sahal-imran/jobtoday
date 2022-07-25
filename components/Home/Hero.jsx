@@ -144,6 +144,7 @@ function Home() {
       <Dialog
         open={Profile}
         onClose={handleCloseProfile}
+        sx={{ backgroundColor: "none", background: "transparent",borderRadius:'32px' }}
       >
         <Box sx={{ width: '600px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', backgroundColor: '#fff', borderRadius: '32px', p: 3 }} >
           <Box sx={{ alignSelf: 'end',cursor:'pointer' }} >
