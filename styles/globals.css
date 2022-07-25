@@ -78,6 +78,10 @@ a {
   font-size: 18px;
   font-family: "GraphikRegular";
 }
+/* dialogue */
+.MuiBackdrop-root.css-yiavyu-MuiBackdrop-root-MuiDialog-backdrop {
+  background-color: rgba(0, 0, 0, 0.9);
+}
 .MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation24.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm.css-1t1j96h-MuiPaper-root-MuiDialog-paper{
   background-color: unset !important;
   background: transparent !important;
