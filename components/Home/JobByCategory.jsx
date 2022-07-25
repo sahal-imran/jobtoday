@@ -29,7 +29,7 @@ function JobByCategory() {
                     <Box sx={{ width: '100%', display: "flex", justifyContent: 'start', alignItems: 'center', flexWrap: 'wrap', mt: 4 }} >
                         {
                             ShowMore(Show_more).map((category, index) => {
-                                return <AnchorLink key={index} href='' sx={{
+                                return <AnchorLink key={index} href={`/country/${category.Name}`} sx={{
                                     backgroundColor: '#f4f5f6', px: 2, py: 1.5, borderRadius: '8px', color: '#29293d', fontSize: '17px', lineHeight: '24px', fontFamily: 'GraphikRegular', textDecoration: 'none', fontWeight: 500, border: '1px solid transparent', "&:hover": {
                                         border: '1px solid #0e54ff', backgroundColor: '#f1f5ff'
                                     }, display: "flex", justifyContent: 'center', alignItems: 'center', mr: 1, mt: 2
@@ -59,57 +59,57 @@ export default JobByCategory
 
 const categories = [
     {
-        PageURL: '', imgURL: '/pictures/home/finance.png',
+        PageURL: 'Accounting-&-Finance', imgURL: '/pictures/home/finance.png',
         Name: 'Accounting & Finance'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/animal-care.png',
+        PageURL: 'Animal-Care', imgURL: '/pictures/home/animal-care.png',
         Name: 'Animal Care'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/artDesign.png',
+        PageURL: 'Art-Media-Design', imgURL: '/pictures/home/artDesign.png',
         Name: 'Art, Media, Design'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/bar.png',
+        PageURL: 'Bar-Staff', imgURL: '/pictures/home/bar.png',
         Name: 'Bar Staff'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/barista.png',
+        PageURL: 'Barista', imgURL: '/pictures/home/barista.png',
         Name: 'Barista'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/cook.png',
+        PageURL: 'Chef-&-Cook', imgURL: '/pictures/home/cook.png',
         Name: 'Chef & Cook'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/child care.png',
+        PageURL: 'Child-Care', imgURL: '/pictures/home/child care.png',
         Name: 'Child Care'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/cleaning.png',
+        PageURL: 'Cleaning', imgURL: '/pictures/home/cleaning.png',
         Name: 'Cleaning'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/construction.png',
+        PageURL: 'Construction-&-Trades', imgURL: '/pictures/home/construction.png',
         Name: 'Construction & Trades'
     },
 
     {
-        PageURL: '', imgURL: '/pictures/home/customer.png',
+        PageURL: 'Customer-Service', imgURL: '/pictures/home/customer.png',
         Name: 'Customer Service'
     },
 
     {
-        PageURL: '', imgURL: '/pictures/home/delivery.png',
+        PageURL: 'Driver-&-Delivery', imgURL: '/pictures/home/delivery.png',
         Name: 'Driver & Delivery'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/education.png',
+        PageURL: 'Education', imgURL: '/pictures/home/education.png',
         Name: 'Education'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/engineering.png',
+        PageURL: 'Engineering', imgURL: '/pictures/home/engineering.png',
         Name: 'Engineering'
     },
     {
@@ -117,60 +117,60 @@ const categories = [
         Name: 'Entertainment'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/events.png',
+        PageURL: 'Events-&-Promotion', imgURL: '/pictures/home/events.png',
         Name: 'Events & Promotion'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/healthcare.png',
+        PageURL: 'Healthcare', imgURL: '/pictures/home/healthcare.png',
         Name: 'Healthcare'
     },
 
     {
-        PageURL: '', imgURL: '/pictures/home/host.png',
+        PageURL: 'Host-&-Hostess', imgURL: '/pictures/home/host.png',
         Name: 'Host & Hostess'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/information.png',
+        PageURL: 'Information-Technology', imgURL: '/pictures/home/information.png',
         Name: 'Information Technology'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/kitchen.png',
+        PageURL: 'Kitchen-Porter', imgURL: '/pictures/home/kitchen.png',
         Name: 'Kitchen Porter'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/legal.png',
+        PageURL: 'Legal', imgURL: '/pictures/home/legal.png',
         Name: 'Legal'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/management.png',
+        PageURL: 'Management', imgURL: '/pictures/home/management.png',
         Name: 'Management'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/manufacturing.png',
+        PageURL: 'Manufacturing', imgURL: '/pictures/home/manufacturing.png',
         Name: 'Manufacturing'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/office.png',
+        PageURL: 'Office-&-Admin', imgURL: '/pictures/home/office.png',
         Name: 'Office & Admin'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/online jobs.png',
+        PageURL: 'Online-Jobs', imgURL: '/pictures/home/online jobs.png',
         Name: 'Online Jobs'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/retail.png',
+        PageURL: 'Retail', imgURL: '/pictures/home/retail.png',
         Name: 'Retail'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/sales.png',
+        PageURL: 'Sales-&-Marketing', imgURL: '/pictures/home/sales.png',
         Name: 'Sales & Marketing'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/salon.png',
+        PageURL: 'Salon-&-Beauty', imgURL: '/pictures/home/salon.png',
         Name: 'Salon & Beauty'
     },
     {
-        PageURL: '', imgURL: '/pictures/home/science.png',
+        PageURL: 'Science', imgURL: '/pictures/home/science.png',
         Name: 'Science'
     },
     {

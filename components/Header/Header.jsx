@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { Box } from '@mui/system';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -10,7 +11,61 @@ import Grid from '@mui/material/Grid';
 
 function Header() {
     const router = useRouter();
+    const JobTitle = router.query.jobTitle;
     const [Show_SearchBox_For_Mobile_View, Set_Show_SearchBox_For_Mobile_View] = useState(false);
+
+    const ButtonsUI = () => {
+        if (router.pathname === `/country/locations`) {
+            return <Box sx={{
+                width: {
+                    md: '30%'
+                }, height: '100%', display: "flex", justifyContent: 'end', alignItems: 'center', mr: {
+                    lg: 6
+                }
+            }} >
+                <AnchorLink href='' sx={{
+                    px: 2, py: 1, borderRadius: '8px', color: 'white', fontSize: '18px', lineHeight: '24px', fontFamily: 'GraphikMedium', textDecoration: 'none', fontWeight: 500, "&:hover": {
+                        backgroundColor: 'rgba(0,0,0,.2)'
+                    }
+                }} >
+                    Start hiring
+                </AnchorLink>
+                <AnchorLink href='' sx={{
+                    px: 2, py: 1, borderRadius: '8px', color: 'white', fontSize: '18px', lineHeight: '24px', fontFamily: 'GraphikMedium', textDecoration: 'none', fontWeight: 500, "&:hover": {
+                        backgroundColor: 'rgba(0,0,0,.2)'
+                    }, ml: 2
+                }} >
+                    Log In
+                </AnchorLink>
+            </Box>
+        }
+        else {
+            return <Box sx={{
+                width: {
+                    md: '30%'
+                }, height: '100%', display: "flex", justifyContent: 'end', alignItems: 'center', mr: {
+                    lg: 6
+                }
+            }} >
+                <Button variant='contained' sx={{
+                    px: 2, py: 1, borderRadius: '8px', color: 'white', fontSize: '18px', lineHeight: '24px', fontFamily: 'GraphikMedium', textDecoration: 'none', fontWeight: 500,backgroundColor:'transparent',boxShadow:'unset', "&:hover": {
+                        backgroundColor: 'rgba(0,0,0,.2)',boxShadow:'unset',
+                    },textTransform:'capitalize'
+                }} >
+                    Chats
+                </Button>
+                <Button variant='contained' sx={{
+                    px: 2, py: 1, borderRadius: '8px', color: 'white', fontSize: '18px', lineHeight: '24px', fontFamily: 'GraphikMedium', textDecoration: 'none', fontWeight: 500,backgroundColor:'transparent',boxShadow:'unset', "&:hover": {
+                        backgroundColor: 'rgba(0,0,0,.2)',boxShadow:'unset',
+                    },textTransform:'capitalize',ml:2
+                }} >
+                    Profile
+                </Button>
+            </Box>
+        }
+
+    }
+
     return (
         <>
             <Box sx={router.pathname === '/country' || router.pathname === '/' ? { display: 'none' } : {
@@ -67,28 +122,7 @@ function Header() {
                             </Box>
                         </Box>
                     </Box>
-                    <Box sx={{
-                        width: {
-                            md: '30%'
-                        }, height: '100%', display: "flex", justifyContent: 'end', alignItems: 'center', mr: {
-                            lg: 6
-                        }
-                    }} >
-                        <AnchorLink href='' sx={{
-                            px: 2, py: 1, borderRadius: '8px', color: 'white', fontSize: '18px', lineHeight: '24px', fontFamily: 'GraphikMedium', textDecoration: 'none', fontWeight: 500, "&:hover": {
-                                backgroundColor: 'rgba(0,0,0,.2)'
-                            }
-                        }} >
-                            Start hiring
-                        </AnchorLink>
-                        <AnchorLink href='' sx={{
-                            px: 2, py: 1, borderRadius: '8px', color: 'white', fontSize: '18px', lineHeight: '24px', fontFamily: 'GraphikMedium', textDecoration: 'none', fontWeight: 500, "&:hover": {
-                                backgroundColor: 'rgba(0,0,0,.2)'
-                            }, ml: 2
-                        }} >
-                            Log In
-                        </AnchorLink>
-                    </Box>
+                    {ButtonsUI()}
                 </Container>
 
                 {/* Button Box for show the search bar box in mobile view */}
@@ -124,7 +158,7 @@ function Header() {
                     <Box sx={{ flexGrow: 1, width: '100%' }}>
                         <Grid container spacing={0}>
                             <Grid item xs={1}>
-                                <Box onClick={() => Set_Show_SearchBox_For_Mobile_View(!Show_SearchBox_For_Mobile_View)} sx={{ width: '100%', height: '100%', display: "flex", justifyContent: 'start', alignItems: 'start',mt:1 }}>
+                                <Box onClick={() => Set_Show_SearchBox_For_Mobile_View(!Show_SearchBox_For_Mobile_View)} sx={{ width: '100%', height: '100%', display: "flex", justifyContent: 'start', alignItems: 'start', mt: 1 }}>
                                     <Image src={'/pictures/Morecities/cross-white.svg'} width={24} height={24} objectFit={'contain'} />
                                 </Box>
                             </Grid>
@@ -133,13 +167,13 @@ function Header() {
                                     <Box sx={{ width: '100%', height: '42px', display: "flex", justifyContent: 'center', alignItems: 'center', borderRadius: '8px', overflow: 'hidden', }} >
                                         <input autoComplete='off' type="text" style={{ width: '100%', height: '100%', outline: 'none', border: 'none', fontFamily: 'GraphikRegular', fontSize: '16px', color: '#2252c7', padding: '0px 16px' }} placeholder='Search jobs' />
                                     </Box>
-                                    <Box sx={{ width: '100%', height: '42px', display: "flex", justifyContent: 'center', alignItems: 'center', borderRadius: '8px', overflow: 'hidden', mt:1 }} >
+                                    <Box sx={{ width: '100%', height: '42px', display: "flex", justifyContent: 'center', alignItems: 'center', borderRadius: '8px', overflow: 'hidden', mt: 1 }} >
                                         <input autoComplete='off' type="text" style={{ width: '100%', height: '100%', outline: 'none', border: 'none', fontFamily: 'GraphikRegular', fontSize: '16px', color: '#2252c7', padding: '0px 16px' }} placeholder='Which city?' />
                                     </Box>
                                 </Box>
                             </Grid>
                             <Grid item xs={1}>
-                                <Box sx={{ width: '100%', height: '100%', display: "flex", justifyContent: 'end', alignItems: 'start',mt:1 }}>
+                                <Box sx={{ width: '100%', height: '100%', display: "flex", justifyContent: 'end', alignItems: 'start', mt: 1 }}>
                                     <Image src={'/pictures/Morecities/search-white.svg'} width={28} height={28} objectFit={'contain'} />
                                 </Box>
                             </Grid>
