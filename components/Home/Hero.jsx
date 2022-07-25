@@ -142,12 +142,13 @@ function Home() {
         </Box>
       </Box>
       <Dialog
+      className='ProfileDialogueBox'
         open={Profile}
-        onClose={handleCloseProfile}
-        sx={{ backgroundColor: "none", background: "transparent",borderRadius:'32px' }}
+        sx={{ backgroundColor: "none", background: "transparent", borderRadius: '32px' }}
+        id={`ProfileDialogueBox`}
       >
         <Box sx={{ width: '600px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', backgroundColor: '#fff', borderRadius: '32px', p: 3 }} >
-          <Box sx={{ alignSelf: 'end',cursor:'pointer' }} >
+          <Box onClick={handleCloseProfile} sx={{ alignSelf: 'end', cursor: 'pointer' }} >
             <Image src={'/pictures/home/cross.svg'} width={30} height={30} objectFit={'objectfit'} />
           </Box>
         </Box>
