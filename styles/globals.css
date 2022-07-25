@@ -78,3 +78,14 @@ a {
   font-size: 18px;
   font-family: "GraphikRegular";
 }
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation24.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm.css-1t1j96h-MuiPaper-root-MuiDialog-paper{
+  background-color: unset !important;
+  background: transparent !important;
+  background-image: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: unset !important;
+  border-radius: 32px;
+  /* max-width: 473px; */
+}

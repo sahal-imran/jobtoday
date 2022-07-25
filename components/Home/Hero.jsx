@@ -6,10 +6,23 @@ import Button from '@mui/material/Button';
 import AnchorLink from "@mui/material/Link";
 import { useTranslation } from "react-i18next";
 import Image from 'next/image';
+import Dialog from '@mui/material/Dialog';
 
 
 function Home() {
   const { t } = useTranslation();
+
+
+  const [Profile, setProfile] = React.useState(false);
+  const handleClickProfile = () => {
+    setProfile(true);
+  };
+
+  const handleCloseProfile = () => {
+    setProfile(false);
+  };
+
+
   return (
     <>
       <Box sx={{
@@ -24,7 +37,7 @@ function Home() {
         </Box>
         {/* Top bar */}
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', p: 2, position: 'absolute', top: '0px' }} >
-          <AnchorLink href='' sx={{display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+          <AnchorLink href='' sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
             <Image src={'/pictures/home/logo.svg'} width={56} height={56} objectFit={'cover'} alt={'logo'} />
           </AnchorLink>
           <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
@@ -44,7 +57,7 @@ function Home() {
             }} >
               chats
             </Button>
-            <Button variant='contained' sx={{
+            <Button onClick={() => handleClickProfile()} variant='contained' sx={{
               px: 2, py: 0.5, borderRadius: '32px', fontSize: '16px', backgroundColor: 'rgba(0,0,0,.3)', color: 'white', boxShadow: 'none', fontFamily: 'GraphikRegular', textTransform: 'capitalize', "&:hover": {
                 backgroundColor: 'rgba(0,0,0,.35)', boxShadow: 'none'
               }
@@ -128,6 +141,16 @@ function Home() {
           </AnchorLink>
         </Box>
       </Box>
+      <Dialog
+        open={Profile}
+        onClose={handleCloseProfile}
+      >
+        <Box sx={{ width: '600px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', backgroundColor: '#fff', borderRadius: '32px', p: 3 }} >
+          <Box sx={{ alignSelf: 'end',cursor:'pointer' }} >
+            <Image src={'/pictures/home/cross.svg'} width={30} height={30} objectFit={'objectfit'} />
+          </Box>
+        </Box>
+      </Dialog>
     </>
   )
 }
