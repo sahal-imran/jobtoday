@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import AnchorLink from "@mui/material/Link";
 import { useTranslation } from "react-i18next";
 import Image from 'next/image';
-import Dialog from '@mui/material/Dialog';
+import Dialog from '../Common/Dialog';
 
 
 function Home() {
@@ -20,6 +20,15 @@ function Home() {
 
   const handleCloseProfile = () => {
     setProfile(false);
+  };
+
+  const [Chat, setChat] = React.useState(false);
+  const handleClickChat = () => {
+    setChat(true);
+  };
+
+  const handleCloseChat = () => {
+    setChat(false);
   };
 
 
@@ -50,7 +59,7 @@ function Home() {
                 blog
               </AnchorLink>
             </Button>
-            <Button variant='contained' sx={{
+            <Button onClick={() => handleClickChat()} variant='contained' sx={{
               px: 2, py: 0.5, borderRadius: '32px', fontSize: '16px', backgroundColor: 'rgba(0,0,0,.3)', color: 'white', boxShadow: 'none', fontFamily: 'GraphikRegular', textTransform: 'capitalize', "&:hover": {
                 backgroundColor: 'rgba(0,0,0,.35)', boxShadow: 'none'
               }, mx: 2
@@ -141,17 +150,10 @@ function Home() {
           </AnchorLink>
         </Box>
       </Box>
-      <Dialog
-        open={Profile}
-        sx={{ backgroundColor: "red", background: "transparent", borderRadius: '32px' }}
-        style={{ backgroundColor: "red !important", background: "transparent !important", borderRadius: '32px !important' }}
-      >
-        <Box sx={{ width: '600px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', backgroundColor: '#fff', borderRadius: '32px', p: 3,background:'black' }} >
-          <Box onClick={handleCloseProfile} sx={{ alignSelf: 'end', cursor: 'pointer' }} >
-            <Image src={'/pictures/home/cross.svg'} width={30} height={30} objectFit={'objectfit'} />
-          </Box>
-        </Box>
-      </Dialog>
+
+      {/* DiaLog */}
+      {<Dialog open={Profile} close={() => handleCloseProfile()} />}
+      {<Dialog open={Chat} close={() => handleCloseChat()} />}
     </>
   )
 }
