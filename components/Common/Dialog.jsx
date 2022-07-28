@@ -32,7 +32,7 @@ function DialogBox(props) {
     return (
         <>
             {/* ++++++++++++ */}
-            {/*    For pc    */}
+            {/*    For desktop    */}
             {/* ++++++++++++ */}
             <Dialog
                 open={props.open}
