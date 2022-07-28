@@ -277,7 +277,7 @@ function DetailOfSelectedJob() {
               Filters
             </Typography>
             {/* Cross icon */}
-            <Box onClick={handleCloseFilter} sx={{ cursor: 'pointer', position: 'absolute', top: '18px', right: '24px' }} >
+            <Box onClick={handleCloseFilter} sx={{ cursor: 'pointer', position: 'absolute', top: '14px', right: '24px' }} >
               <Image src={'/pictures/home/cross.svg'} width={24} height={24} objectFit={'objectfit'} />
             </Box>
           </Box>
@@ -285,7 +285,7 @@ function DetailOfSelectedJob() {
           {/* Middile content (Filters) */}
           <Box sx={{ width: '100%', minHeight: 'calc(100% - 220px)', overflowY: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', px: 4 }} >
             {/* Easy Apply */}
-            <Box sx={{ mt: { md: 24 }, width: '100%' }} ><SwitchButtonWithText Text={'Easy apply'} Current_state={Easy_Apply} OnChange={Set_Easy_Apply} /></Box>
+            <Box sx={{ mt: { md: 24, mt:20 }, width: '100%' }} ><SwitchButtonWithText Text={'Easy apply'} Current_state={Easy_Apply} OnChange={Set_Easy_Apply} /></Box>
 
             {/* Employee Type */}
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'start', flexDirection: 'column', borderBottom: '1px solid #d6d6dc', py: 5 }} >
