@@ -272,20 +272,20 @@ function DetailOfSelectedJob() {
         <Box sx={{ maxWidth: { md: '650px' }, width: { md: 'unset', xs: '100%' }, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', overflow: 'hidden', borderRadius: '24px' }} >
 
           {/* Title Bar */}
-          <Box sx={{ width: '100%', height: { md: '100px', xs: '60px' }, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', borderBottom: '1px solid #d6d6dc', }} >
+          <Box sx={{ width: '100%', height: { md: '100px', xs: '70px' }, display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'relative', borderBottom: '1px solid #d6d6dc', }} >
             <Typography variant='h2' sx={{ fontSize: '17px', lineHeight: '24px', fontFamily: 'GraphikBold', color: '#000' }} >
               Filters
             </Typography>
             {/* Cross icon */}
-            <Box onClick={handleCloseFilter} sx={{ cursor: 'pointer', position: 'absolute', top: '14px', right: '24px' }} >
+            <Box onClick={handleCloseFilter} sx={{ cursor: 'pointer' }} >
               <Image src={'/pictures/home/cross.svg'} width={24} height={24} objectFit={'objectfit'} />
             </Box>
           </Box>
 
           {/* Middile content (Filters) */}
-          <Box sx={{ width: '100%', minHeight: 'calc(100% - 220px)', overflowY: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', px: 4 }} >
+          <Box sx={{ width: '100%', minHeight: 'calc(100% - 180px)', overflowY: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', px: 4 }} >
             {/* Easy Apply */}
-            <Box sx={{ mt: { md: 24, mt:20 }, width: '100%' }} ><SwitchButtonWithText Text={'Easy apply'} Current_state={Easy_Apply} OnChange={Set_Easy_Apply} /></Box>
+            <Box sx={{ mt: { md: 24, xs: 20 }, width: '100%' }} ><SwitchButtonWithText Text={'Easy apply'} Current_state={Easy_Apply} OnChange={Set_Easy_Apply} /></Box>
 
             {/* Employee Type */}
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'start', flexDirection: 'column', borderBottom: '1px solid #d6d6dc', py: 5 }} >
