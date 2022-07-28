@@ -272,7 +272,7 @@ function DetailOfSelectedJob() {
         <Box sx={{ maxWidth: { md: '650px' }, width: { md: 'unset', xs: '100%' }, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', overflow: 'hidden', borderRadius: '24px' }} >
 
           {/* Title Bar */}
-          <Box sx={{ width: '100%', height: { md: '100px', xs: '70px' }, display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'relative', borderBottom: '1px solid #d6d6dc', }} >
+          <Box sx={{ width: '100%', height: { md: '100px', xs: '70px' }, display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'relative', borderBottom: '1px solid #d6d6dc',px:3 }} >
             <Typography variant='h2' sx={{ fontSize: '17px', lineHeight: '24px', fontFamily: 'GraphikBold', color: '#000' }} >
               Filters
             </Typography>
